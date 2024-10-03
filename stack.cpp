@@ -3,30 +3,25 @@
 
 using namespace std;
 
-// Node constructor
 Node::Node(int data) {
     this->data = data;
     this->next = nullptr;
 }
 
-// Stack constructor
 Stack::Stack(int max_size) {
     top = nullptr;
     count = 0;
     this->max_size = max_size;
 }
 
-// Check if the stack is empty
 bool Stack::isEmpty() {
     return top == nullptr;
 }
 
-// Check if the stack is full
 bool Stack::isFull() {
     return count == max_size;
 }
 
-// Push an element to the stack
 void Stack::push(int data) {
     if (isFull()) {
         cout << "Stack is full! Cannot push more elements." << endl;
@@ -39,7 +34,6 @@ void Stack::push(int data) {
     cout << "Pushed " << data << " into the stack." << endl;
 }
 
-// Pop an element from the stack
 void Stack::pop() {
     if (isEmpty()) {
         cout << "Stack is empty! Cannot pop." << endl;
@@ -52,7 +46,6 @@ void Stack::pop() {
     count--;
 }
 
-// Peek the top element of the stack
 void Stack::peek() {
     if (isEmpty()) {
         cout << "Stack is empty! Cannot peek." << endl;
@@ -61,12 +54,10 @@ void Stack::peek() {
     }
 }
 
-// Display the current size of the stack
 void Stack::size() {
     cout << "Current stack size: " << count << " (Max size: " << max_size << ")" << endl;
 }
 
-// Display all elements in the stack
 void Stack::display() {
     if (isEmpty()) {
         cout << "Stack is empty." << endl;
@@ -81,7 +72,6 @@ void Stack::display() {
     }
 }
 
-// Expand the stack size
 void Stack::expand(int new_size) {
     if (new_size <= max_size) {
         cout << "New size must be greater than current max size." << endl;
